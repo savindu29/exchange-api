@@ -43,23 +43,9 @@ public class User {
 
     @OneToMany(mappedBy ="userPropertyId" )
     private List<LovedProperty> lovedProperties;
-    @OneToOne
-    @JoinColumn(name = "role_id", unique = true)
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
     private UserRole userRole;
 
-//    avatar;
-
-
-          /*  propertyId,
-            contact_number,
-            first_name,
-            last_name,
-            email,
-            password,
-            is_account_non_expire,
-            is_account_non_lock,
-            is_credentials_non_expire,
-            is_enabled,
-            prefix,
-            avatar*/
 }

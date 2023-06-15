@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity (name="")
 @Getter
 @Setter
@@ -20,7 +22,7 @@ public class UserRole {
     @Column (name = "role_description")
     private String roleDescription;
 
-    @OneToOne(mappedBy = "userRole")
-    private User user;
+    @OneToMany(mappedBy = "userRole")
+    private List<User> user;
 
 }
